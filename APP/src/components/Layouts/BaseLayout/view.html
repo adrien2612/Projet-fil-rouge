@@ -1,0 +1,17 @@
+<div id="content" class="g-min-height-100vh d-flex flex-column">
+    <header>
+      <slot name="header">
+        <top-bar></top-bar>
+      </slot>
+    </header>
+  
+    <main :class="($route.meta.isHome !== true ? '' : 'g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-black-opacity-0--after g-min-height-80vh g-flex-centered')">
+      <slot name="main"></slot>
+    </main>
+  
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
+  </div>
+  
+  

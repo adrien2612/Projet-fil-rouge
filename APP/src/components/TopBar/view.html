@@ -1,0 +1,24 @@
+<div class="u-header__section u-header__section--light g-transition-0_1 g-py-0">
+    <b-navbar toggleable="md" class="navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+      <b-container>
+        <b-navbar-brand :to="{ path: '/home'}" v-if="$route.meta.isHome !== true">
+          <img  width="250" fluid src="static/img/logo/hermestia2.JPG" alt="Logo">
+        </b-navbar-brand>
+  
+        <b-navbar-toggle target="nav_collapse" class="navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0">
+          <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </span>
+        </b-navbar-toggle>
+  
+        <b-collapse is-nav id="nav_collapse" class="align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg">
+          <nav-menu v-if="!this.$session.exists()"></nav-menu>
+          <nav-menu-session v-else-if="this.$session.exists()"></nav-menu-session>
+          <language-selector></language-selector>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
+  </div>
+  

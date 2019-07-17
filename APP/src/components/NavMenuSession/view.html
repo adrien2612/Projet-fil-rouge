@@ -1,0 +1,8 @@
+<b-navbar-nav class="text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+    <b-nav-item v-for="route in $router.options.routes"
+      v-if="route.nav && route.auth" :key="route.name"
+      class="g-mx-10--lg g-mx-15--xl">
+      <b-link :to="route" class="g-py-7 g-px-0">{{ route.name }}</b-link>
+    </b-nav-item>
+  </b-navbar-nav>
+  

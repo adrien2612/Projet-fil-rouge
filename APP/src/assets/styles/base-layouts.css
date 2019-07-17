@@ -1,0 +1,133 @@
+/* #content {
+  min-height: 100vh;
+}
+
+.bg-img {
+  background: url('../img/fond.jpg');
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.navbar .logo {
+  max-width: 10em;
+}
+
+.navbar .logo img {
+  max-width: 100%
+} */
+
+#content main {
+    flex-grow: 1;
+  }
+  
+  .flex-grow {
+    flex-grow: 1;
+  }
+  
+  /* Dropdown */
+  
+  .dropdown-menu {
+    padding: 0;
+    border-top: solid #f09d01 0.2em;
+  }
+  
+  
+  .dropdown .dropdown-menu {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+  
+      max-height: 0;
+      display: block;
+      overflow: hidden;
+      opacity: 0;
+  }
+  
+  .dropdown.show .dropdown-menu {
+      max-height: 100vh;
+      opacity: 1;
+  }
+  
+  /* Loader */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .loader::after {
+    content: '';
+    width: 5em;
+    height: 5em;
+    animation: spin 1s ease-in-out infinite;
+    border: 1em solid #f3f3f3;
+    border-top-width: 1em;
+    border-top-style: solid;
+    border-top-color: rgb(243, 243, 243);
+    border-top: 1em solid #f6b804;
+    border-radius: 50%;
+  }
+  
+  .information {
+    margin-top: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .well {
+    background-color: rgb(191, 238, 229);
+    margin: auto;
+    padding: 50px 50px;
+    ;
+    border-radius: 20px;
+    /* display:inline-block; */
+  } 
+  .login {
+    width: 200px;
+    margin: auto;
+  }
+  .list-item:first-child {
+    margin: 0;
+  }
+  .list-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .button {
+    margin: auto;
+  } 
+  
+  .spinner[data-v-0af1f3c3] {
+    animation-duration: 0s;
+    animation:  0s;
+    box-sizing: 0px;
+  width: 0px;
+  height: 0%;
+  border-radius: 0%;
+  border: 0px;
+  border-top: 0px;
+  -webkit-animation: 0;
+  animation: 0;
+  position: 0px;
+  left: 0px;
+  }
+  
+  .is-green {
+    background: green;
+  }
+  
+  hr.style-two { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+  

@@ -1,0 +1,29 @@
+        <div class="col-lg-4">
+            <div class="g-bg-white g-color-black g-py-15">
+              <div class="g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-pink-left g-rounded-3 g-mb-5">
+                <div class="g-mx-5">
+                    <h2 class="h4 g-font-weight-600 mb-30" style="display: inline">{{ $t("message.contacter") }}</h2>
+                    <br><br>
+                    <div class="col-xs-12 col-sm-6">
+                      <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13" style="display: inline; margin-left: 115px">{{ $t("message.destinataire") }}</label>
+                      <select class="custom-select mb-3" v-model="destinataire" required style="margin-left: 87px">
+                          <option value="h.lebroussois@net.estia.fr">Hugo Le Broussois</option>
+                          <option value="j.oneal@net.estia.fr">James O'Neal</option>
+                          <option value="j.colet@net.estia.fr">Julien Colet</option>
+                          <option value="l.soubré@net.estia.fr">Lucas Soubré</option>
+                          <option value="a.remy@net.estia.fr">Antoine Remy</option>
+                          <option value="a.clotudrzal@net.estia.fr">Adrien Clot-Udrzal</option>
+                          </select>
+                    </div>
+                </div>
+                <form>
+                    <textarea class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-dark g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" v-model="message" rows="5" placeholder="Votre message"></textarea>
+                    <br>
+                    <div class="text-middle g-py-5">
+                      <button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded-3 g-py-12 g-px-35" role="button" @click="sendEmail">{{ $t("message.envoyer") }}</button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+        </div>
+    

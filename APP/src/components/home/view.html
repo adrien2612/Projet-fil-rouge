@@ -1,0 +1,19 @@
+<b-form class="g-py-15" @submit.prevent="login"> 
+  
+  <div class="mb-4">
+    <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" placeholder="p.fournier@net.estia.fr" v-model="input.email" required></b-form-input>
+  </div>
+
+  <div class="g-mb-35">
+    <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3" type="password" placeholder="*******" v-model="input.password" required></b-form-input>
+  </div>
+
+  <div style="width: 42%; margin-left: 115px">
+    <b-btn variant="danger" class="btn-block g-my-2 g-py-10 g-px-5" type="submit">{{ $t("message.connexion") }}</b-btn>
+  </div>
+
+ 
+</div>
+</b-form>
+
+    

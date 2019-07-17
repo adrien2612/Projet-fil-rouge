@@ -1,0 +1,39 @@
+<base-layout>
+<b-container slot="main">
+	<div class="container g-pos-rel g-z-index-1">
+			<div class="row justify-content-center">
+				<div class="col-sm-8 col-lg-5">
+					<div class="g-brd-around g-brd-gray-light-v4 rounded g-py-40 g-px-30">
+						<div class="row">
+						<div class="col-xs-12 col-sm-6" v-show="showComponent1 == false && showComponent2 == false">
+								<label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">{{ $t("message.choix") }}</label>
+								<select class="custom-select mb-3" v-model="userChoice" required>
+									<option value="recover">{{ $t("message.recover") }}</option>
+									<option value="send">{{ $t("message.send") }}</option>
+									</select>
+						<div class="text-right g-py-5">
+							<button class="btn u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase rounded-3 g-py-6 g-px-35" role="button" @click="showComponent">{{ $t("message.confirme") }}</button>
+						</div></div></div>
+
+						<div v-show="showComponent1">
+                        <h3  class="h2 g-color-black g-font-weight-600">{{ $t("message.phase1") }}</h3>
+						<send></send> 
+						</div>	
+						
+						<div v-show="showComponent2">
+                        <h3  class="h2 g-color-black g-font-weight-600">{{ $t("message.phase2") }}</h3>
+						<recover v-bind:showComponent2="showComponent2"></recover>
+						</div>
+						<div class="text-right g-py-5" v-show="showComponent1 || showComponent2 == true">
+								<button class="btn g-font-weight-600 g-font-size-13 text-uppercase rounded-3 g-py-12 g-px-35 fa fa-backward" title="Précédent" role="button" @click="previous"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+
+	</b-container>
+
+</base-layout>

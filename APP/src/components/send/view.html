@@ -1,0 +1,84 @@
+<b-form class="g-py-15">
+
+    <i class="fa fa-question-circle" @click="ShowHelp()"></i>
+    <div class="alert alert-dismissible fade show g-color-black rounded-0" role="alert" v-if="showHelp == true">
+            <button type="button" class="close u-alert-close--light" data-dismiss="alert" aria-label="Close" @click="dontShowHelp()">
+              <span aria-hidden="true">×</span>
+            </button>
+      
+            <div class="media">
+              <span class="d-flex g-mr-10 g-mt-5">
+      
+                <i class="icon-ban g-font-size-25"></i>
+      
+              </span>
+              <span class="media-body align-self-center text-center mb-4">
+      
+                <strong>{{ $t("message.etape1") }}</strong> {{ $t("message.metape1") }}<br>
+                <strong>{{ $t("message.etape2") }}</strong> {{ $t("message.metape2") }}<br>
+                <strong>{{ $t("message.etape3") }}</strong> {{ $t("message.metape3") }}
+      
+              </span>
+            </div>
+          </div>
+    
+
+    <div class="row">
+        <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">{{ $t("message.émetteur") }}</label>
+        <select class="custom-select mb-3" v-model="emetteur" required>
+            <option value="nameOfroom1">Teacher1</option>
+            <option value="nameOfroom2">Teacher2</option>
+            <option value="nameOfroom3">Teacher3</option>
+            <option value="nameOfroom4">Teacher4</option>
+            <option value="nameOfroom5">Teacher5</option>
+            </select>
+      
+        <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">{{ $t("message.récepteur") }}</label>
+        <select class="custom-select mb-3" v-model="destinataire" required>
+            <option value="nameOfroom1">Teacher1</option>
+            <option value="nameOfroom2">Teacher2</option>
+            <option value="nameOfroom3">Teacher3</option>
+            <option value="nameOfroom4">Teacher4</option>
+            <option value="nameOfroom5">Teacher5</option>
+            </select>
+      </div><br>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 mb-4">
+          <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">{{ $t("message.poids") }}</label>
+          <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" v-model="poid" required></b-form-input>
+        </div>
+      
+      <div class="col-xs-12 col-sm-6 mb-4">
+        <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">{{ $t("message.importance") }}</label>
+        <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" v-model="importance" required></b-form-input>
+      </div>
+    </div>
+      <br>
+
+      <div class="row">
+            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13" style="padding-left: 180px">{{ $t("message.description") }}</label>
+            <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray g-brd-primary--hover rounded g-px-15" type="text" placeholder="Lettre" v-model="description" required></b-form-input>
+        </div>
+
+      <br>
+
+      <div class="row">
+          <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13" style="padding-left: 200px">Distance</label>
+          <b-form-input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray g-brd-primary--hover rounded g-px-15"
+          type="number"  v-model="distance" min="3" max="5" placeholder="3" required></b-form-input>
+      </div>
+
+      <br>
+  
+    <div class="mb-4" v-show="calibrationDone == false">
+      <b-btn variant="danger" class="btn-block g-py-13" @click="startCalibration">Lancer calibration</b-btn>
+    </div>
+    <div class="mb-4" v-show="calibrationDone == true">
+      <p>La calibration est finie</p>
+      <b-btn variant="danger" class="btn-block g-py-13" @click="send" >{{ $t("message.envoyer") }}</b-btn>
+    </div>
+  
+   
+  </div>
+  </b-form>

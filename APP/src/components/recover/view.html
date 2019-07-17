@@ -1,0 +1,21 @@
+<b-form class="g-py-15"> 
+  
+    <div v-show="distanceTodo == '0'" class="row" style="margin-left: 87px; margin-top: 50px">
+        <div>Le robot est arrivé.</br>
+        </div> 
+        
+        <div v-show="trunkState == 'closed'" style="width: 42%; margin-left: 35px">
+            <b-btn @click="openTrunk()" variant="danger" class="btn-block g-my-2 g-py-10 g-px-5" type="submit">Ouvrir coffre</b-btn>
+        </div>
+
+        <div v-show="trunkState == 'open'" style="width: 42%; margin-left: 35px">
+                <b-btn @click="closeTrunk()" variant="danger" class="btn-block g-my-2 g-py-10 g-px-5" type="submit">Fermer coffre</b-btn>
+            </div>
+    </div>
+
+    <div v-show="distanceTodo != '0'" class="row" style="margin-left: 87px; margin-top: 50px">
+        <div>Le robot est à : {{distanceTodo}} 2 mètres</br>
+        </div> 
+    </div>
+  
+  </b-form>

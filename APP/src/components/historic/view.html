@@ -1,0 +1,23 @@
+<div>
+        <div class="shortcode-html">
+          <!-- Basic Table -->
+          <div class="table-responsive">
+            <table class="table table-striped u-table--v1 mb-0">
+              <thead>
+                <tr>
+                  <th>{{ $t("message.mission") }}</th>
+                  <th>{{ $t("message.départ") }}</th>
+                  <th class="hidden-sm">{{ $t("message.arrivée") }}</th>
+                  <th>{{ $t("message.temps") }}</th>
+                </tr>
+              </thead>
+
+                <tbody v-for="n in missions.length">
+                    <historicTable v-bind:sequence="n-1" v-bind:missions="missions[n-1]"></historicTable>
+                </tbody>
+    
+            </table>
+          </div>
+          <!-- End Basic Table -->
+        </div>
+    </div>

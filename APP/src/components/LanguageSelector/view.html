@@ -1,0 +1,6 @@
+<b-navbar-nav class="text-uppercase g-font-weight-600">
+    <b-nav-item-dropdown :text="langs[$i18n.locale]" right>
+        <b-dropdown-item v-for="(lang, i) in langs" :key="i" @click="updateLanguage(i)">{{ lang }}</b-dropdown-item>
+    </b-nav-item-dropdown>
+  </b-navbar-nav>
+  
